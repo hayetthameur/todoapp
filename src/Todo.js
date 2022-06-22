@@ -16,10 +16,14 @@ class Todo extends Component {
         this.handlAddItem = this.handlAddItem.bind(this)   
 
     }
+  
     TextChange(event) {
         this.setState({          
                 text: event.target.value          
-        })
+        }
+       
+        )
+       
     } 
     handlAddItem(event){
         let newitem = { id: Math.random(), todo: this.state.text, complete:false}
@@ -48,13 +52,12 @@ class Todo extends Component {
             }else{
                 return el
             }
-            
-
         })
     })
     }
     render() { 
-        return ( <div className="todo">
+        return ( 
+        <div className="todo">
             <div className="todo">
                 <div className="app">
                     <h1>To-Do App!</h1>
@@ -64,13 +67,11 @@ class Todo extends Component {
                                placeholder="Enter task" 
                                onChange={this.TextChange}
                         />
-
                     </div> 
                 </div>
                 <div className="btnajout">
                     <span onClick={this.handlAddItem}>add</span>
                 </div>
-
             </div>
             <div>
                     <ul >
@@ -93,32 +94,8 @@ class Todo extends Component {
                     </ul>
 
             </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                 </div>
-
-
-
-
-
-
-
-            
+        </div>
+    
          );
     }
 }
